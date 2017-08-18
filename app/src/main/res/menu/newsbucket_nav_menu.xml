@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_group">
+        <item
+            android:id="@+id/nav_bbcnews"
+            android:icon="@null"
+            android:checked="true"
+            android:title="@string/nav_bbcnews" />
+        <item
+            android:id="@+id/nav_bloomberg"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_bloomberg" />
+        <item
+            android:id="@+id/nav_buzzfeed"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_buzzfeed" />
+        <item
+            android:id="@+id/nav_cnn"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_cnn" />
+        <item
+            android:id="@+id/nav_espn"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_espn" />
+        <item
+            android:id="@+id/nav_googlenews"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_googlenews" />
+        <item
+            android:id="@+id/nav_theeconomist"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_theeconomist" />
+        <item
+            android:id="@+id/nav_thetimesofindia"
+            android:icon="@null"
+            android:checked="false"
+            android:title="@string/nav_thetimesofindia" />
+    </group>
+</menu>

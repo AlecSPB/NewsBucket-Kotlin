@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Fullscreen" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Fullscreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppProgressbar" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorControlActivated">@color/primary_dark</item>
+        <item name="colorControlNormal">@color/primary_dark</item>
+    </style>
+
+</resources>

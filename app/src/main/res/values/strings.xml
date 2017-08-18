@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">News Bucket</string>
+
+    <string name="nav_bbcnews">BBC News</string>
+    <string name="nav_googlenews">Google News</string>
+    <string name="txt_news_channel">News Channels</string>
+    <string name="nav_bloomberg">Bloomberg</string>
+    <string name="nav_buzzfeed">Buzzfeed</string>
+    <string name="nav_cnn">CNN</string>
+    <string name="nav_espn">ESPN</string>
+    <string name="nav_theeconomist">The Economist</string>
+    <string name="nav_thetimesofindia">The Times of India</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="msg_nonews_avail">The news source you\'ve selected (bbc-news) isn\'t available sorted by latest</string>
+    <string name="msg_no_internet">Internet not available at a moment</string>
+    <string name="transition_news_img">transition news image</string>
+    <string name="transition_news_date">transition news date</string>
+    <string name="transition_news_heading">transition news heading</string>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/card_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/img_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:contentDescription="@null"
+                    android:transitionName="@string/transition_news_img"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/news_default_bg" />
+
+                <LinearLayout
+                    android:id="@+id/img_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/news_overlay"
+                    android:contentDescription="@null"
+                    android:orientation="vertical"
+                    android:paddingLeft="24dp"
+                    android:paddingStart="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:scaleType="centerCrop">
+
+                    <TextView
+                        android:id="@+id/txt_publishdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        android:transitionName="@string/transition_news_date"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:transitionName="@string/transition_news_heading"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:drawablePadding="10dp"
+                android:layout_marginBottom="4dp"
+                android:drawableLeft="@drawable/icon_author"
+                android:drawableStart="@drawable/icon_author"
+                android:textColor="@color/secondary_text"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txt_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:autoLink="web"
+                android:textColorLink="@color/secondary_text"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/icon_link"
+                android:drawableStart="@drawable/icon_link"
+                android:textColor="@color/secondary_text"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/icon_description"
+                android:drawableStart="@drawable/icon_description"
+                android:text="Eric Karabell reveals his annual list of players to avoid in fantasy drafts, for various reasons, and the top quarterback and tight end are on it."
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
