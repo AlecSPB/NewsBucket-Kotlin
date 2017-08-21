@@ -8,5 +8,6 @@ class Constants {
         val APP_NAME = "News Bucket"
         val APP_URL = "https://newsapi.org/"
         val API_KEY = "0d1d916fb7154fc6955a453c76f36475"
+        val APPINVITE_REQUEST = 31//"news bucket appinvite"
     }
 }

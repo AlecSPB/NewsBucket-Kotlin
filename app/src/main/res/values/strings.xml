@@ -20,4 +20,9 @@
     <string name="transition_news_date">transition news date</string>
     <string name="transition_news_heading">transition news heading</string>
     <string name="transition_toolbar">transition toolbar</string>
+    <string name="msg_appinvite_title">News Bucket Promotion Invite</string>
+    <string name="msg_appinvite_msg">Try this News App. On App all news channels.</string>
+    <string name="msg_appinvite_link">https://www.newsapi.org/</string>
+    <string name="msg_appinvite_img"><![CDATA[https://icons.better-idea.org/icon?url=http://espn.go.com&size=70..120..200]]></string>
+    <string name="msg_appinvite_action">Get Invite</string>
 </resources>

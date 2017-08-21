@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "512445055876",
+    "firebase_url": "https://risi-eec01.firebaseio.com",
+    "project_id": "risi-eec01",
+    "storage_bucket": "risi-eec01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512445055876:android:c4bd0a8e54dddfc3",
+        "android_client_info": {
+          "package_name": "com.angad.newsbucket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512445055876-88lm65g9v0e5d2b3241evp3c0j53v2lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0cNbgEQeDigYJUJlNabtaNpqZDEIydy4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

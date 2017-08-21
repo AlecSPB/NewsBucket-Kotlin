@@ -1,18 +1,22 @@
 package com.angad.newsbucket.activities
 
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 
 import com.angad.newsbucket.R
 import com.angad.newsbucket.animations.DetailTransition
 import com.angad.newsbucket.fragments.NewsSourceFragment
+import com.google.android.gms.appinvite.AppInviteInvitation
+import helpers.Constants
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import java.util.*
@@ -99,9 +103,25 @@ class MainActivity : AppCompatActivity() {
         chooseNewsSource(toadd = false, index = position)
     }
 
+    private fun onAppInvite() {
+        val intent = AppInviteInvitation.IntentBuilder(getString(R.string.msg_appinvite_title))
+                .setMessage(getString(R.string.msg_appinvite_msg))
+                .setDeepLink(Uri.parse(getString(R.string.msg_appinvite_link)))
+                .setCustomImage(Uri.parse(getString(R.string.msg_appinvite_img)))
+                .setCallToActionText(getString(R.string.msg_appinvite_action))
+                .build()
+        startActivityForResult(intent, Constants.APPINVITE_REQUEST)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.getItemId()) {
             android.R.id.home -> drawer_layout.openDrawer(GravityCompat.START)
+            R.id.appinvite -> onAppInvite()
         }
         return super.onOptionsItemSelected(item)
     }

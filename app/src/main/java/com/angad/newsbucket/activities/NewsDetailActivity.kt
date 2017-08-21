@@ -9,6 +9,7 @@ import android.os.PersistableBundle
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.angad.newsbucket.R
@@ -18,7 +19,9 @@ import com.angad.newsbucket.models.ArticlesBean
 import com.facebook.datasource.BaseDataSubscriber
 import com.facebook.datasource.DataSource
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.google.android.gms.appinvite.AppInviteInvitation
 import com.google.gson.Gson
+import helpers.Constants
 import kotlinx.android.synthetic.main.activity_news_detail.*
 import kotlinx.android.synthetic.main.toolbar.*
 import java.util.concurrent.ExecutorService
@@ -85,9 +88,25 @@ class NewsDetailActivity : AppCompatActivity(), View.OnClickListener {
         super.onDestroy()
     }
 
+    private fun onAppInvite() {
+        val intent = AppInviteInvitation.IntentBuilder(getString(R.string.msg_appinvite_title))
+                .setMessage(getString(R.string.msg_appinvite_msg))
+                .setDeepLink(Uri.parse(getString(R.string.msg_appinvite_link)))
+                .setCustomImage(Uri.parse(getString(R.string.msg_appinvite_img)))
+                .setCallToActionText(getString(R.string.msg_appinvite_action))
+                .build()
+        startActivityForResult(intent, Constants.APPINVITE_REQUEST)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             android.R.id.home -> onBackPressed()
+            R.id.appinvite -> onAppInvite()
         }
         return super.onOptionsItemSelected(item)
     }

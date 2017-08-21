@@ -33,9 +33,7 @@
             android:textColor="@android:color/white"
             android:text="@string/app_name"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingLeft="-48dp"
-            android:paddingStart="-48dp"/>
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
