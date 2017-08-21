@@ -13,7 +13,6 @@
 
         <com.angad.newsbucket.fresco.zoomable.ZoomableDraweeView
             android:id="@+id/zoomable_news_img"
-            android:transitionName="@string/transition_news_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

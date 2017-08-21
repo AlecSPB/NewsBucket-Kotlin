@@ -1,10 +1,12 @@
 package com.angad.newsbucket.activities
 
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.angad.newsbucket.R
+import com.angad.newsbucket.animations.DetailTransition
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.drawable.ProgressBarDrawable
 import com.facebook.drawee.drawable.ScalingUtils
@@ -22,6 +24,9 @@ class ImageZoomableActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_zoomable)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setSharedElementEnterTransition(DetailTransition(300, 100))
+        }
         setSupportActionBar(toolbar)
 
         supportActionBar?.setHomeButtonEnabled(true)

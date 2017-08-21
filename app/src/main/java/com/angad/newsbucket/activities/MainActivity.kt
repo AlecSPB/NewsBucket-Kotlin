@@ -1,6 +1,7 @@
 package com.angad.newsbucket.activities
 
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -10,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 
 import com.angad.newsbucket.R
+import com.angad.newsbucket.animations.DetailTransition
 import com.angad.newsbucket.fragments.NewsSourceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -24,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setSharedElementEnterTransition(DetailTransition(300, 100))
+        }
 
         setSupportActionBar(toolbar)
         drawerToggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.drawer_open, R.string.drawer_close)

@@ -6,7 +6,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "com.tiwari.angad.musicstream_kotlin"
+        applicationId "com.angad.newsbucket"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

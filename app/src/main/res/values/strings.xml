@@ -15,7 +15,9 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="msg_nonews_avail">The news source you\'ve selected (bbc-news) isn\'t available sorted by latest</string>
     <string name="msg_no_internet">Internet not available at a moment</string>
+
     <string name="transition_news_img">transition news image</string>
     <string name="transition_news_date">transition news date</string>
     <string name="transition_news_heading">transition news heading</string>
+    <string name="transition_toolbar">transition toolbar</string>
 </resources>

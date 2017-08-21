@@ -23,6 +23,7 @@
         android:id="@+id/img_applogo"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:contentDescription="@null"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/txt_appname"
         tools:layout_editor_absoluteX="175dp"

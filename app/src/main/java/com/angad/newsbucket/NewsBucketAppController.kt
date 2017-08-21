@@ -3,7 +3,9 @@ package com.angad.newsbucket
 import android.app.Application
 import android.support.multidex.MultiDex
 import com.angad.newsbucket.networks.INewsBucketApiEndpoint
+import com.facebook.cache.disk.DiskCacheConfig
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import helpers.Constants
@@ -27,7 +29,10 @@ class NewsBucketAppController : Application() {
         super.onCreate()
 
         MultiDex.install(this)
-        Fresco.initialize(this)
+        val imagePipelineConfig = ImagePipelineConfig.newBuilder(this)
+                .setMainDiskCacheConfig(DiskCacheConfig.newBuilder(this).build())
+                .build()
+        Fresco.initialize(this, imagePipelineConfig)
     }
 
     init {

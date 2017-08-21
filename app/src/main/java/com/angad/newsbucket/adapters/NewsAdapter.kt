@@ -15,9 +15,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.angad.newsbucket.R
 import com.angad.newsbucket.activities.NewsDetailActivity
+import com.angad.newsbucket.helpers.Utilities
 import com.angad.newsbucket.models.ArticlesBean
 import com.facebook.drawee.view.SimpleDraweeView
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_news_detail.*
 
 /**
  * Created by angad.tiwari on 16-Aug-17.
@@ -47,9 +49,14 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.txt_heading?.setText(news?.get(position)?.title)
-        holder?.txt_publishdate?.setText("Published at: ${news?.get(position)?.publishedAt}")
-        holder?.img_news?.setImageURI(Uri.parse(news?.get(position)?.urlToImage))
+        holder?.txt_heading?.setText(news?.get(position)?.title?:"No Title")
+        if(news?.get(position)?.publishedAt != null) {
+            holder?.txt_publishdate?.setText(Utilities.formatDateAndTime(Utilities.getDateFormat(context), Utilities.formatDateStringToMillis(news?.get(position)?.publishedAt)))
+        } else {
+            holder?.txt_publishdate?.setText("News date not available")
+        }
+        if(news?.get(position)?.urlToImage!=null)
+            holder?.img_news?.setImageURI(Uri.parse(news?.get(position)?.urlToImage))
     }
 
     inner class ViewHolder (view: View?) : RecyclerView.ViewHolder(view), View.OnClickListener {
