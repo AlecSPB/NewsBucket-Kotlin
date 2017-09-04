@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import com.angad.newsbucket.adapters.NewsAdapter
 import com.angad.newsbucket.helpers.Utilities
 import com.angad.newsbucket.models.Articles
 import com.angad.newsbucket.models.ArticlesBean
-import com.google.gson.Gson
 import helpers.Constants
 import kotlinx.android.synthetic.main.fragment_news.*
 import org.json.JSONObject
@@ -27,6 +25,7 @@ import retrofit2.Response
  */
 class NewsFragment : Fragment() {
 
+    val loadingFilePath = "loading.gif"
     var newsAdapter: NewsAdapter? = null
     var news: MutableList<ArticlesBean>?= null
     var source: String? = null
@@ -48,6 +47,8 @@ class NewsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        Utilities.playGifImages(progress_news_loading, loadingFilePath)
+
         news = arrayListOf<ArticlesBean>()
         newsAdapter = NewsAdapter(context = context, news = news, category = category, source = source)
         recycler_news.setLayoutManager(LinearLayoutManager(context, RecyclerView.VERTICAL, false))

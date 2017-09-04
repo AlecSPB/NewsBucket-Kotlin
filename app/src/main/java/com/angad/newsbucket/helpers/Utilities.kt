@@ -3,9 +3,13 @@ package com.angad.newsbucket.helpers
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.net.Uri
 import android.os.Build
 import android.text.format.DateFormat
 import com.angad.newsbucket.NewsBucketAppController
+import com.facebook.common.util.UriUtil
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.drawee.view.SimpleDraweeView
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -51,6 +55,18 @@ class Utilities {
             dateFormat.setTimeZone(TimeZone.getDefault())
             val formattedDate = dateFormat.format(date)
             return formattedDate
+        }
+
+        fun playGifImages(view: SimpleDraweeView?, filePath: String) {
+            val uri = Uri.Builder()
+                    .scheme(UriUtil.LOCAL_ASSET_SCHEME)
+                    .path(filePath)
+                    .build()
+            val ctrl = Fresco.newDraweeControllerBuilder()
+                    .setUri(uri)
+                    .setAutoPlayAnimations(true)
+                    .build()
+            view?.setController(ctrl)
         }
     }
 }

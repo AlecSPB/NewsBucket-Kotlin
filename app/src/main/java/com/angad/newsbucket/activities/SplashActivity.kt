@@ -3,11 +3,13 @@ package com.angad.newsbucket.activities
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import com.facebook.rebound.SimpleSpringListener
 import com.facebook.rebound.Spring
 import com.facebook.rebound.SpringSystem
 import com.facebook.rebound.SpringUtil
 import com.angad.newsbucket.R
+import com.angad.newsbucket.helpers.Utilities
 import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.*
 import kotlin.concurrent.timerTask
@@ -15,12 +17,21 @@ import kotlin.concurrent.timerTask
 class SplashActivity : AppCompatActivity() {
 
     val TAG = "Splash"
+    val placeholderFilePath = "placeholder.gif"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        appLogoAnimation()
+        //appLogoAnimation()
+        Utilities.playGifImages(img_applogo, placeholderFilePath)
+        val handler = Handler()
+        handler.postDelayed(object : Runnable{
+            override fun run() {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                finish()
+            }
+        }, 3000)
     }
 
     fun appLogoAnimation() {
